@@ -20,7 +20,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copy the built files from the previous stage
-COPY --from=build /app/dist/coreui-free-angular-admin-template /usr/share/nginx/html
+COPY --from=build /app/dist/coreui-free-angular-admin-template/browser /usr/share/nginx/html
 
 # Copy the default nginx.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
